@@ -1,0 +1,181 @@
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+
+.scorecard {
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.1);
+
+    &__header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+        &__status {
+            background-color: lightgray;
+            border-radius: 5px;
+            padding: 8px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            &::before {
+                content: "•";
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 24px;
+                position: relative;
+                top: 3px;
+                color: rgb(169, 169, 169);
+                line-height: 0;
+            }
+            &--live {
+                background-color: rgb(243, 207, 213);
+                color: maroon;
+                &::before {
+                    color: rgb(237, 198, 204);
+                }
+            }
+            &--today {
+                background-color: rgb(160, 232, 119);
+                color: green;
+                &::before {
+                    color: rgb(129, 208, 84);
+                }
+            }
+        }
+        &__league {
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            img {
+                width: auto;
+                height: 25px;
+                margin-right: 8px;
+            }
+        }
+        &__fav {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            font-size: 22px;
+            &--inactive {
+                color: #ddd;
+            }
+            &--active {
+                color: gold;
+            }
+        }
+    }
+    &__body {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 15px;
+        flex-direction: column;
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+    &__league {
+        margin: 0 auto;
+        flex-basis: 30%;
+        &__flag {
+            border: 10px solid #efefef;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            margin: 0 auto;
+            span {
+                height: 100px;
+                width: 100px;
+                display: flex;
+                border-radius: 100%;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+                margin: 0 auto;
+            }
+        }
+        &__flag img {
+            height: auto;
+            width: 65%;
+        }
+        &__score {
+            margin: 0 auto;
+            flex-basis: 40%;
+            &__date {
+                color: rgb(148, 148, 148);
+                text-align: center;
+                margin-bottom: 10px;
+                b {
+                    color: black;
+                }
+            }
+            &__goal {
+                text-align: center;
+                padding: 15px 0;
+                font-size: 42px;
+                color: rgb(126, 66, 245);
+                i {
+                    font-style: normal;
+                    font-size: 30px;
+                    position: relative;
+                    top: -5px;
+                    color: #ddd;
+                }
+            }
+            &__elapsed {
+                display: block;
+                color: rgb(179, 57, 57);
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            &__refree {
+                max-width: 75%;
+                margin: 0 auto;
+                text-align: center;
+                font-weight: bold;
+                color: black;
+                font-size: 14px;
+                margin-bottom: 15px;
+                span {
+                    color: rgb(157, 155, 155);
+                }
+            }
+        }
+        &__name {
+            text-align: center;
+            max-width: 85%;
+            margin: 20px auto 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+    &__footer {
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__venue {
+        display: inline-block;
+        text-align: center;
+        background-color: rgb(126, 66, 245);
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        position: relative;
+        top: 20px;
+        i {
+            margin-right: 8px;
+        }
+    }
+}

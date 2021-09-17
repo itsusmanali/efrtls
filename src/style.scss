@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+}
+.fixture__board {
+    background-image: linear-gradient(100deg, #e1e1e1, white, white);
+    padding: 30px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
